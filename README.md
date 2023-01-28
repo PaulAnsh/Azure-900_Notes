@@ -1,15 +1,16 @@
 # Azure-900_Notes
 Repo- Documenting my azure-900 notes. 
 
+## Exam content:
+     Cloud Concepts: 15-25%
+     Azure Core Services: 30-35%
+     Secuirty, Privacy, Compliance and Trust: 25-30%
+     Pricing and support: 20-25%
+     
+     passing grade: 700/1000
+     duration: 60 minutes
 
 ## Intro
-     
-  AZ-900: Microsoft Azure Fundamentals
-  
-  Cloud concepts: 25-30%
-  Azure Architechure and services: 35-40%
-  Azure management and governance 30-35%
-  
   
 Azure: It is a private and public platform used to build, deploy and manage applications.
 
