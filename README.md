@@ -91,3 +91,34 @@ Azure Functions (or serverless computing)
 2. Azure Virtual Machines: 
   
   
+## High Avalability:
+      
+     Your ability for your service to remain available by ensuring there is no single poiunt of failure. 
+      
+     Azure Load Balancer: allow you to evenly distribute traffic to multiple servers in datacenters. If a datacenter is down, LB will route traffic to only availble        datacenter with servers.
+      
+## High Scalabilty:
+     
+     Your ability to increase capacity based on the increasing demand of traffic, memory and computing power. 
+     
+## High Elasticity:
+     
+     Your ability to automatically increase or decrease capacity based on the current demand of traffic, memory and computing power. 
+     
+     scaling out- Add more servers of same size
+     scaling in - Remove more servers of same size. 
+     
+## High DUrability:
+      
+     Your ability ti recover from a disaster and to prevent the loss of data solutions that recover from a disater is know as Disaster recovery(DR). 
+
+## Regions and Geo:
+     
+     A region is a group of mulitple datacenter(AZ). Azure has 58 regions across 140 countries. 
+     A Geo is discreet market of two or more regions that preserves data residency and compliance boundries.
+     
+     Paired region: 
+     Each reggion is paired with another region 300 miles away. (Only one region is updated at a time to ensure no outage)
+     
+     Azure Geo-redundant storage(GRS)- It replicates data to a secondary region automatically, ensuring that data is durable even in the event that primary region is        not recoverable. 
+     
