@@ -121,4 +121,12 @@ Azure Functions (or serverless computing)
      Each reggion is paired with another region 300 miles away. (Only one region is updated at a time to ensure no outage)
      
      Azure Geo-redundant storage(GRS)- It replicates data to a secondary region automatically, ensuring that data is durable even in the event that primary region is        not recoverable. 
+  
+## Fault and Update Domain
+     
+     An AZ in an Azure region is a combination of a fault domain and update domain. 
+     
+     Fault domain: It is a logical grouping of hardware in server racks, to avoid a single point of failure within an AZ. It is a group of vm that share common power        source and network switch. 
+     Update Domain: When azure applies updates to the underlying hardware and software, update domains ensures your resources do not go offline. 
+     
      
