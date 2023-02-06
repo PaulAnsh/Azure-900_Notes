@@ -127,9 +127,20 @@ Azure Functions (or serverless computing)
    An AZ in an Azure region is a combination of a fault domain and update domain. 
      
    Fault domain: It is a logical grouping of hardware in server racks, to avoid a single point of failure within an AZ. It is a group of vm that share common power        source and network switch. 
+   
    Update Domain: When azure applies updates to the underlying hardware and software, update domains ensures your resources do not go offline. 
+   
    Avalability sets: A logical grouping that you can use in azure to ensure that vm's you place in the avalabiliy set are in different fault/update domains to avoid      downtime. 
    
+## Computing Services:
+
+     Azure Service Fabric: Tier-1 enterprise contianers as a service. Distributed systens platformsm runs in azure or on-premises. easy to package, deploy, and manage                            scalable and reliable microservices. 
+   
+     Azure Functions: Event-drive, serverless computre functions run code without provisioning ot managing servers. You pay only for the compute time you consume. 
+     
+     Azure Batch: Plans, schedules and executes your batch computer workloads across running 100+ jobs in parallel. Use spot vm's to save money (previously used low-                     priority vm's to save on compute). 
+     
+     
    
    
    
