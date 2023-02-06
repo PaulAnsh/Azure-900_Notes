@@ -134,12 +134,28 @@ Azure Functions (or serverless computing)
    
 ## Computing Services:
 
-     Azure Service Fabric: Tier-1 enterprise contianers as a service. Distributed systens platformsm runs in azure or on-premises. easy to package, deploy, and manage                            scalable and reliable microservices. 
+   Azure Service Fabric: Tier-1 enterprise contianers as a service. Distributed systens platformsm runs in azure or on-premises. easy to package, deploy, and manage                            scalable and reliable microservices. 
    
-     Azure Functions: Event-drive, serverless computre functions run code without provisioning ot managing servers. You pay only for the compute time you consume. 
+  Azure Functions: Event-drive, serverless computre functions run code without provisioning ot managing servers. You pay only for the compute time you consume. 
      
-     Azure Batch: Plans, schedules and executes your batch computer workloads across running 100+ jobs in parallel. Use spot vm's to save money (previously used low-                     priority vm's to save on compute). 
+   Azure Batch: Plans, schedules and executes your batch computer workloads across running 100+ jobs in parallel. Use spot vm's to save money (previously used low-                     priority vm's to save on compute). 
      
+     
+## Storage Services: 
+
+   Azure blob storage: Object server less storage. Store very large files and large amount of unstructred files. Pay for what you store, unlimtied storage, no-            resiszing vol, file system protocols.      
+   
+   Azure Disk storage: A virtual volume, choose SSD or HDD, encryption by default, attach volume to vm's. 
+   
+   Azure file storage: A shared volume that you can access and manage like a file server. eg: SMB.
+   
+   Azure Queue Storage: Message queue a data store for queueing and reliable delivery messgae between application. 
+   
+   Azure Table storage: Wide-column NO SQL Database. A NOSQL store that hosts unstructred data independent of any schema. 
+   
+   Azure Data Box: 
+   
+    
      
    
    
