@@ -159,6 +159,9 @@ Azure Functions (or serverless computing)
    
    Azure data lake storage: A storage which is used to store unstructred or strucurted data at any scale in a centralized repo.
    
+## Database services:
+
+   Azure Cosmos DB: A fully managed NOSQL database, designed to be scale at 99.999% avalabilty. 
     
      
    
