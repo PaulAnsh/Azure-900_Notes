@@ -153,7 +153,11 @@ Azure Functions (or serverless computing)
    
    Azure Table storage: Wide-column NO SQL Database. A NOSQL store that hosts unstructred data independent of any schema. 
    
-   Azure Data Box: 
+   Azure Data Box: Briefcase computer and storage designed, which is used to store and move terabytes or petabytes of data 
+   
+   Azure Archieve storage: A storage at cheap prize, which is used to storae data for longer period of time. 
+   
+   Azure data lake storage: A storage which is used to store unstructred or strucurted data at any scale in a centralized repo.
    
     
      
