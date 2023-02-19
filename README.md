@@ -162,6 +162,16 @@ Azure Functions (or serverless computing)
 ## Database services:
 
    Azure Cosmos DB: A fully managed NOSQL database, designed to be scale at 99.999% avalabilty. 
+   
+   Azure SQL database: Fully managed SQL database with auto scale, integral intelligence, and robust security.
+   
+   Azure database for MYSQL/PSQL/MariaDB: Fully managed and scalable with HA and secuity. 
+   
+   SQL server on VMs: Used to shift SQL server form on-premises to cloud. 
+   
+   Azure Synapse anlaytics: Fully managed data warehouse with integral security at every level of scale at no extra cost. 
+   
+   
     
      
    
