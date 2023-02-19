@@ -177,6 +177,9 @@ Azure Functions (or serverless computing)
    
    Azure table storage: No SQL database that hosts unstructured data independent of any schema. 
    
+   
+## Application Integration services:
+   
     
      
    
