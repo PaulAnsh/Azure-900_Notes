@@ -171,6 +171,11 @@ Azure Functions (or serverless computing)
    
    Azure Synapse anlaytics: Fully managed data warehouse with integral security at every level of scale at no extra cost. 
    
+   Azure Database Migration services: Migrate your database to cloud with no code changes to application.
+   
+   Azure cache for redis: Caches frequently used to reduce data and application latency.
+   
+   Azure table storage: No SQL database that hosts unstructured data independent of any schema. 
    
     
      
