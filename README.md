@@ -88,7 +88,6 @@ Azure Functions (or serverless computing)
 
 1. Azure App service: Azure app service is used for deploying enterprise applications for web and mobile. It is easily scaled with complaint requirements, secuirty and performance assured that is managed by azure platform. It falls under Paas. 
 
-2. Azure Virtual Machines: 
   
   
 ## High Avalability:
