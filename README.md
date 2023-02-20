@@ -107,7 +107,7 @@ Azure Functions (or serverless computing)
      scaling out- Add more servers of same size
      scaling in - Remove more servers of same size. 
      
-## High DUrability:
+## High Durability:
       
    Your ability ti recover from a disaster and to prevent the loss of data solutions that recover from a disater is know as Disaster recovery(DR). 
 
