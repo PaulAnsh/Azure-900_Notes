@@ -185,7 +185,9 @@ Azure Functions (or serverless computing)
    
    Azure API: API gateway, quickly build and consume API's in the cloud. 
    
-   Azure Service bus: 
+   Azure Service bus: It is a reliable cloud messaging as a service (MAAS) abd sumply hybrid integration. 
+   
+   Azure Stream Analytics:
    
      
    
