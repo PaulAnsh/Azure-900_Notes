@@ -178,6 +178,16 @@ Azure Functions (or serverless computing)
    
    
 ## Application Integration services:
+
+   Services which are designed to help apps or services to talk to each other.
+   
+   Azure notification hub: Pub/Sub send push notifiacation to any platform from any back end. 
+   
+   Azure API: API gateway, quickly build and consume API's in the cloud. 
+   
+   Azure Service bus: 
+   
+     
    
     
      
