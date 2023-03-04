@@ -195,6 +195,17 @@ Azure Functions (or serverless computing)
    
    Azure Queue Storage: Messaging queue. A data store for queuing and reliably delivering message b/w applications. 
    
+
+## Developer and mobile tools: 
+     
+   Azure SignalR service: Real time messaging easily add real-time web functionality to applications. 
+   
+   Azure app service: Easy to use service for developing and scaling web-applications with .net, Node.JS, Java, Python, and PHP. Developer focus on building web-apps,    and not worry about underline infrastructre. 
+   
+   Xamarin: Mobile app framework. Create powerful and scalable native mobile apps with .NET and Azure. 
+   
+   
+## Azure Devops services: 
      
    
     
