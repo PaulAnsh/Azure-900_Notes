@@ -187,7 +187,13 @@ Azure Functions (or serverless computing)
    
    Azure Service bus: It is a reliable cloud messaging as a service (MAAS) abd sumply hybrid integration. 
    
-   Azure Stream Analytics:
+   Azure Stream Analytics: Serverless real-time analytics, from the cloud to the edge. 
+   
+   Azure Logic apps: It is used to schdule, automate and orchestrate tasks, business processes and workflows. 
+   
+   Azure API management: Hybrid, multi-cloud management platform for API'S across all enviroments. Put in front of existing API's to add additional functionality. 
+   
+   Azure Queue Storage: Messaging queue. A data store for queuing and reliably delivering message b/w applications. 
    
      
    
