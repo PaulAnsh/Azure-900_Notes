@@ -236,7 +236,82 @@ VNET peering: You could set up an internet connection between the two, but a muc
 
 - Some Azure resources, such as Azure SQL Database instances and Azure Storage containers, can’t be put in a virtual network directly, but there is an indirect way to bring them into a VNet. The solution is called a private endpoint. It’s simply a private IP address in a virtual network that’s connected to an Azure resource that’s outside of the VNet.
 - I should mention that not all Azure resources can be connected to a private endpoint. A resource has to be hosted by a service that supports something called Private Link. This is what’s actually used to connect your private endpoint to the service.
-     
+
+# **Azure storage:**
+
+- It is scalable
+- Durable
+- Managed service
+- Accessible over web.
+- Encrypted
+- It has 4 categories: Blob, Files, Queues, Tables.
+
+- **Blob:** Binary large object, in order to store files in blob, we have to make a container( container here  is not the application one, we have to use container(folder) to put files into it.) They are not organized. If you just need a place to put files, whether they’re documents or videos or logs or anything else, then you should use Blob storage, which is by far the **cheapest** of all the storage types.
+    - There are three access tiers in blob storage:
+    1. Hot: For frequent accessed data
+    2. Cool: For infrequent access of data
+        
+        Lower storage cost but higher cost for read and writes. Data must be in cool tier for at least 30 days
+        
+    3. Archive: For rarely accessed data. May take up to 15 hours to access data. 5x cheaper than cool tier for storage but much more expensive for reads. Data needs to be there for at least 180 days. 
+- We can move data with blob tiers anytime we want. But if we move data before the data we will be charged early deletion fees.
+- **File storage:** It has the sort of hierarchical structure you’d expect in a filesystem**.** In fact, it’s SMB-compliant, so you can use it as a Windows file share. This makes it easy to move an on-premises file server to Azure. Even better, you can make this file share globally accessible over the web, if you want. To do that, users need a shared access signature token, which allows access to particular data for a specific amount of time. It is **expensive** then blob.
+- **Queue storage:** Queue storage is a very different option. It’s intended for passing messages between applications. One application pushes messages onto the queue and another application asynchronously retrieves those messages from the queue, one at a time, and processes them.
+- **Table storage:** I find Table storage to be the most surprising type of Azure Storage. It’s a NoSQL datastore with storage costs that are about the same as File storage and with way cheaper transaction costs. I think Microsoft realized what a good deal this is too, because they now have a premium version of Table storage that’s part of their Cosmos DB service.
+- **Disk storage:** I should also mention that there’s another type of Azure Storage. It’s what’s used for the disks that are attached to virtual machines. But these disks are created when you create a VM, so you don’t need to create them yourself in Azure Storage. That’s why you’ll only see options for blobs, files, queues, and tables in your storage accounts.
+
+**Locally-redundant storage (or LRS) is replicated across racks in the same data center. This means that if there’s a disaster at that data center, your data could be lost. Although this is highly unlikely, you should only use locally-redundant storage if you can easily reconstruct your data.**
+
+**Zone-redundant storage (or ZRS) is replicated across three zones within one region, so if an entire zone goes down, your data will still be available.**
+
+**Geo-redundant storage (or GRS) is replicated across two regions, so even if an entire region goes down, your data will still be available. However, in the event of a regional disaster, you’d have to perform a geo-failover before you could access your data in the secondary region.**
+
+[Data redundancy - Azure Storage](https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy)
+
+**If you need to upload lots of files, then it would be faster to use AZ Copy, which is a command-line utility that runs on Windows, macOS, and Linux. It lets you copy files and folders to or from a storage account, and it even lets you copy them between Azure and other cloud providers, such as AWS.**
+
+**If you’re migrating from an on-premises environment to Azure, then you should consider using Azure Migrate and Azure Data Box. Azure Migrate does a lot more than copy data. First, it discovers your on-premises servers, web apps, and databases. Then it assesses them, telling you the size and cost of the equivalent Azure services. Finally, it helps you do the migration.**
+
+**If you need to send a large amount of data during the migration, the solution is to use Azure Data Box. Here’s how it works. Microsoft ships a Data Box storage device to your datacenter. Then you copy your data to the device and ship it back to Microsoft. When they receive it, Microsoft will transfer the data from the device to your Azure storage account. You can also use Data Box to do the reverse, that is, export your data from Azure to your datacenter if you need to at some point in the future. Due to the time and expense involved with Azure Data Box, you would typically use it only if you need to transfer more than 40 terabytes of data.**
+
+## Azure Active Directory:
+
+Identity and access management system. It allows to create user accounts for on-prem.
+
+In cloud: AD is used access cloud applications and resources. 
+
+if you already have an on-premises Active Directory implementation, you don’t have to recreate all of your users and groups in Azure Active Directory. Instead, you can synchronize your accounts between the two systems using **Azure AD Connect.** This’ll create the accounts on Azure for you and keep them in sync when changes are made to the accounts in Active Directory. It will allow you to use single sign-on (or SSO), which means that users only need to log in once to access both their on-premises environment and their Azure environment. You can also use SSO to access Microsoft 365.
+
+## **RBAC (Role-Based Access Control):**
+
+ ****
+
+Azure Active Directory can authenticate users, meaning it identifies who they are, but it doesn’t know what they should be allowed to do in Azure. In other words, it doesn’t handle **authorization. That’s managed by a separate system called role-based access control (or RBAC).**
+
+## ****Zero Trust and Defense in Depth on Azure:****
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cd9ad056-9b1d-42d1-a65a-75a7624eed7c/Untitled.png)
+
+## **Managing the cost:**
+
+**TCOC(Total cost of ownership calculator):** The Azure Total Cost of Ownership(***TCO***) Calculator is used to estimate the cost savings you can achieve by migrating your application workloads to Microsoft Azure. 
+
+**Subscription and cost:** Before you can use Azure, you need to have a subscription. It’s used by Microsoft for billing purposes. Whenever you create a resource in Azure, it will be assigned to a subscription, so Microsoft will know how to bill for that resource. It’s possible to have multiple subscriptions, but each Azure resource can only be assigned to one subscription.
+
+Additional:
+
+- You can not put a resource group in more than one resource group.
+- you can move a resource from one resource group to another. also can move resource form one sub to another.
+- Resources don’t need to be in the same region as the resource group they’re in.
+- When you delete a resource group, all of the resources in it get deleted, too. This is a very useful way of making sure you delete all of the resources related to a particular application or project.
+- Azure provides three types of platform logs that can help with troubleshooting and auditing. Resource logs (formerly known as diagnostic logs) contain information about things that happened within an Azure resource, such as accessing a database. Activity logs contain information at the subscription level about activities that were performed on a resource from the outside, such as shutting down a database instance. Azure Active Directory logs contain information about activities specifically related to Azure Active Directory, such as recent logins and new users added.
+- When a user accidentally modifies or deletes a resource, such as a virtual machine, it can have catastrophic consequences, so Microsoft provides a handy way to prevent this from happening. An administrator can apply a resource lock to important resources.
+- There are two types of locks: Delete and Read-only. A Delete lock, of course, prevents a resource from being deleted. A read-only lock prevents a resource from being deleted or modified, so it’s more restrictive than a Delete lock. If two different administrators add locks to the same resource, then the most restrictive lock is applied. Even an administrator can’t delete a locked resource, so they have to delete the lock (or locks) before they can delete the resource.
+- **If you want to apply a lock to all of the resources in a resource group, you only have to apply the lock to the resource group itself, and all of the resources in it will inherit the lock. You can even do this at the subscription level for all resources in a subscription.**
+- To enforce a wide variety of governance policies, you can use the Azure Policy service. For example, suppose your company has a European division that is legally required to store its data only in European data centers. You could create a policy that only allows SQL Database instances to be created in European regions and assign that policy to the resource group for that division of the company. You’d also need to create similar policies for other data storage services, such as SQL Data Warehouse and Data Lake Storage.
+- Now suppose you need to assign the same policies to a number of different resource groups or subscriptions. To make it easier, you can group related policies into what’s called an initiative and then assign that initiative to various subscriptions, resource groups, and management groups.
+- Speaking of management groups, what are they? If your organization has a lot of subscriptions, you’ll likely want to apply the same policies or policy initiatives to many of them. This would normally require applying them to each subscription individually, but there’s an easier way. You can put your subscriptions in management groups. Then when you apply a policy or a role assignment to a management group, it will be inherited by all of the subscriptions in that management group.
+- the Service Trust Portal is focused specifically on compliance. For example, it has links to Azure audit reports for regulatory standards like SOC, FedRAMP, and ISO27001. These will be helpful if your organization is going through these compliance audits. There’s also a link to a site called “Compliance Manager”. This is a great tool that helps you achieve compliance. It creates assessments for different Microsoft services. It shows how compliant your organization is and how compliant Microsoft is for a particular area.
    
    
    
