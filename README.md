@@ -203,11 +203,16 @@ Azure Functions (or serverless computing)
    Azure app service: Easy to use service for developing and scaling web-applications with .net, Node.JS, Java, Python, and PHP. Developer focus on building web-apps,    and not worry about underline infrastructre. 
    
    Xamarin: Mobile app framework. Create powerful and scalable native mobile apps with .NET and Azure. 
-   
-   
-## Azure Devops services: 
-     
-   
+
+## Azure Virtual network (Vnet):
+
+- It is private network. In this we address the ip address, subnets, and the region we want it in.
+ - IP addresses : we mention IP address in VNet so that it can assign the network form the pool we just selected.
+- Subnet: We mention subnet because we need to group the resources who constantly work with each other and put them in one subnet. After doing that we can add security, default route for the subnets to work together      if we need them to.
+- It also create a default route to allow the subnet to connect with the internet
+  - We can also create a custom route if don’t want to use default route and wants to add the firewall with special security and instructions.
+ - In default: Outbound traffic is allowed to the internet, but not all inbound traffic is allowed.
+- If a resource need a inbound access to vnet, then you need assign a public IP address to allow that.
     
      
    
