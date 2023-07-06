@@ -213,7 +213,29 @@ Azure Functions (or serverless computing)
   - We can also create a custom route if don’t want to use default route and wants to add the firewall with special security and instructions.
  - In default: Outbound traffic is allowed to the internet, but not all inbound traffic is allowed.
 - If a resource need a inbound access to vnet, then you need assign a public IP address to allow that.
-    
+  - Need a name resolution service to translate between names and IP addresses.
+- If you need resources in a VNET to communicate with each other using names : **Azure-provided name resolution (Automatically present when we create a VNET)**
+- If you need to resolve the names of systems in another virtual network: **Azure DNS private zones (Only for private networks)**
+- If the resources in VNet need to resolve the names of systems in an on-premises environment: **(Your own DNS server or Azure DNS)**
+  
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/627425ef-141a-4d9d-b66c-5e504c236399/Untitled.png)
+
+**Connecting to other networks:**
+
+VNET peering: You could set up an internet connection between the two, but a much faster and more secure way to do it is to use VNet peering. You just need to configure one peering connection in each direction between the two VNets, and then resources will be able to communicate with each other as if they’re on the same network.
+
+- If the two VNet are in different region then we can use the **Global Vnet peering**
+
+**To connect VNet with on-premises:** 
+
+- Azure VPN : Need to deploy azure VPN gateway in virtual network to encrypt the VPN and allow the data to transfer. Need to install vpn device(Site-to-site(Local network gateway)) at the on-premises location as well to get the data.
+    - If you want to connect individual devices, such as mobile phones, to your virtual network, then you can set up point-to-site connections. This method works differently from the site-to-site method because there’s no VPN device on the user’s side. Instead, you have to install a certificate on each mobile device. The certificate is used to authenticate with the Azure VPN Gateway. In most cases, you can use the same VPN Gateway for both site-to-site and point-to-site connections. In fact, you can only have one VPN Gateway in each VNet, so you have to use the same one. The only situation where you can’t support both site-to-site and point-to-site connections from the same gateway is when you need to configure a different type of routing for each.
+- **Azure express route: I**f you don’t want your connection to go over the internet or you need more bandwidth, then you can set up a direct connection using Azure ExpressRoute. Be aware that this is a much more expensive solution, though.
+
+# Private endpoints:
+
+- Some Azure resources, such as Azure SQL Database instances and Azure Storage containers, can’t be put in a virtual network directly, but there is an indirect way to bring them into a VNet. The solution is called a private endpoint. It’s simply a private IP address in a virtual network that’s connected to an Azure resource that’s outside of the VNet.
+- I should mention that not all Azure resources can be connected to a private endpoint. A resource has to be hosted by a service that supports something called Private Link. This is what’s actually used to connect your private endpoint to the service.
      
    
    
